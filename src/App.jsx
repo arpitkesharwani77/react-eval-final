@@ -1,23 +1,22 @@
-import {BrowserRouter as Router,Routes,Route} from "react-router-dom"
-import Home from "./pages/Home"
-import CountryDetails from "./pages/CountryDetails"
-import Navbar from "./components/Navbar"
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
+import CountryDetails from "./pages/CountryDetails";
+import { ThemeProvider } from "./context/ThemeContext";
+import "./App.css";
 
-
-function App() {
-  
-
+const App = () => {
   return (
-    <Router>
-      <Navbar/>
+    <ThemeProvider>
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/:country" element={<CountryDetails />} />
+        </Routes>
+      </Router>
+    </ThemeProvider>
+  );
+};
 
-      <Routes>
-          <Route path="/" element={<Home/>}/>
-          <Route path="/:country" element={<CountryDetails/>}/>
-      </Routes>
-
-    </Router>
-  )
-}
-
-export default App
+export default App;

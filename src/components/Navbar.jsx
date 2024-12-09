@@ -1,17 +1,20 @@
 
-
-
-import {useTheme} from "../context/ThemeContext"
+import { useTheme } from "../context/ThemeContext";
+import "./Navbar.css";
 
 const Navbar = () => {
-    const {toggleTheme}=useTheme()
+  const { toggleTheme, theme } = useTheme();
+
   return (
-    <nav>
-        <h1> Country Finder</h1>
-
-        <button onClick={toggleTheme}>Toggle Theme</button>
+    <nav className="navbar">
+      <div className="navbar-container">
+        <h1>Country Finder</h1>
+        <button onClick={toggleTheme} className="theme-toggle-btn">
+          {theme === "light" ? "Dark Mode" : "Light Mode"}
+        </button>
+      </div>
     </nav>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

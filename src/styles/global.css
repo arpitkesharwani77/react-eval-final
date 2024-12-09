@@ -1,0 +1,20 @@
+body {
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  button {
+    cursor: pointer;
+    font-size: 1rem;
+    border: none;
+    border-radius: var(--border-radius);
+    padding: 10px 20px;
+    transition: var(--transition);
+  }
+  
+  button:hover {
+    opacity: 0.8;
+  }
+  

@@ -1,24 +1,22 @@
+import { createContext, useState, useContext } from "react";
 
-import { createContext,useState,useContext } from "react"
-
-const ThemeContext=createContext()
+const ThemeContext = createContext();
 
 // eslint-disable-next-line react/prop-types
-export const ThemeProvider=({children})=>{
+export const ThemeProvider = ({ children }) => {
+  const [theme, setTheme] = useState("light");
 
-    const [theme,setTheme]=useState("light")
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === "light" ? "dark" : "light"));
+  };
 
-    const toggleTheme=()=>{
-        setTheme((prev)=>(prev==="light"?"dark":"light"))
-    }
+  return (
+    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+      <div className={theme}>
+        {children}
+      </div>
+    </ThemeContext.Provider>
+  );
+};
 
-    return (
-        <ThemeContext.Provider value={{theme,toggleTheme}}>
-            <div className={theme==="light"?"light-theme":"dark-theme"}>
-                {children}
-            </div>
-        </ThemeContext.Provider>
-    )
-}
-
-export const useTheme=()=>useContext(ThemeContext)
+export const useTheme = () => useContext(ThemeContext);

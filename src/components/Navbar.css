@@ -1,0 +1,22 @@
+.navbar {
+    position: sticky;
+    top: 0;
+    background-color: var(--primary-color);
+    padding: 1rem;
+    z-index: 1000;
+  }
+  
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .theme-toggle-btn {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    border: none;
+  }
+  

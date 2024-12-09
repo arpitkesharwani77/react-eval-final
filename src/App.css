@@ -1,0 +1,16 @@
+.theme-light {
+    --bg-color: var(--light-bg);
+    --text-color: var(--light-text);
+  }
+  
+  .theme-dark {
+    --bg-color: var(--dark-bg);
+    --text-color: var(--dark-text);
+  }
+  
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: var(--transition);
+  }
+  
